@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Dhruv Kohli's personal site with research, projects, and resume."
+    >
+    <title>Dhruv Kohli</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Dhruv Kohli home">Dhruv Kohli</a>
+      <nav aria-label="Primary navigation">
+        <a href="#profile">Profile</a>
+        <a href="#research">Research</a>
+        <a href="#resume">Resume</a>
+        <a href="https://github.com/dhruvk1432">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="intro">
+        <div class="intro-copy">
+          <p class="eyebrow">Financial mathematics, quantitative research, and market structure</p>
+          <h1>Researching markets where data, incentives, and frictions meet.</h1>
+          <p class="lead">
+            I am a University of Chicago financial mathematics student focused on quantitative
+            research, trading, and market microstructure. This site collects my research,
+            projects, and selected work as it develops.
+          </p>
+          <div class="action-row" aria-label="Primary links">
+            <a class="button primary" href="#research">View IAQF Paper</a>
+            <a class="button" href="assets/resume/Dhruv_Kohli_Resume.pdf">Resume PDF</a>
+          </div>
+        </div>
+
+        <dl class="highlights" aria-label="Profile highlights">
+          <div>
+            <dt>2026 IAQF</dt>
+            <dd>Winning paper</dd>
+          </div>
+          <div>
+            <dt>UChicago</dt>
+            <dd>M.S. Financial Mathematics</dd>
+          </div>
+          <div>
+            <dt>2025 CME</dt>
+            <dd>2nd of 1,864</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section id="profile" class="section profile-section">
+        <div class="section-heading">
+          <p class="eyebrow">Profile</p>
+          <h2>About</h2>
+        </div>
+        <div class="profile-grid">
+          <p>
+            I work on quantitative problems where statistical modeling has to survive real market
+            constraints: noisy data, transaction costs, release lags, liquidity limits, and
+            behavioral stress. My background spans financial mathematics, economics, portfolio
+            research, macro forecasting, and applied trading competitions.
+          </p>
+          <p>
+            Current interests include market microstructure, systematic macro signals, stablecoin
+            and crypto market structure, fixed income relative value, and tools that make research
+            more reproducible.
+          </p>
+        </div>
+      </section>
+
+      <section id="research" class="section research-section">
+        <div class="section-heading">
+          <p class="eyebrow">Featured Research</p>
+          <h2>Cross-Currency Dynamics in Cryptocurrencies</h2>
+        </div>
+
+        <div class="project-layout">
+          <div class="project-copy">
+            <p class="award">Winning Paper, IAQF Student Competition 2026</p>
+            <p class="authors">
+              Dhruv Kohli, Prashanth Bhaskara, Sparsh Agarwal, and Sankalp Yadav
+            </p>
+            <p>
+              This paper studies how the March 2023 Silicon Valley Bank crisis moved through crypto
+              markets after USDC de-pegged. Using 1-minute exchange data from Binance, Coinbase,
+              and Kraken, the project separates Bitcoin quote-currency fragmentation into a
+              stablecoin peg layer and a USD-adjusted arbitrage layer.
+            </p>
+            <p>
+              The central result is a sharp timescale separation: the adjusted BTC basis
+              mean-reverted in about 0.6 minutes during the crisis, while the USDC peg deviation
+              persisted for roughly 572 minutes. The finding localizes the durable failure to the
+              stablecoin reserve layer while showing how peg stress still affected liquidity,
+              volatility, cross-exchange basis, and executable arbitrage.
+            </p>
+            <ul class="project-points">
+              <li>Built a high-frequency pipeline across major crypto venues.</li>
+              <li>Measured stablecoin-driven dispersion versus true arbitrage residuals.</li>
+              <li>Mapped empirical failure channels to stablecoin reserve and redemption policy.</li>
+            </ul>
+            <div class="action-row">
+              <a class="button primary" href="assets/papers/IAQF_Inefficient_Markets_2026.pdf">
+                Read Paper
+              </a>
+              <a class="button" href="https://github.com/dhruvk1432/IAQF_2026_Inefficient_Markets">
+                GitHub Repo
+              </a>
+            </div>
+          </div>
+
+          <figure class="project-figure">
+            <img
+              src="assets/images/iaqf-dispersion-adjusted.png"
+              alt="Kraken crisis decomposition showing unadjusted USDC dispersion and adjusted residuals."
+            >
+            <figcaption>
+              Large nominal USDC dispersion compresses after marking the stablecoin leg to USD.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="paper-viewer" aria-label="Embedded IAQF paper">
+          <div class="viewer-heading">
+            <h3>Paper</h3>
+            <a href="assets/papers/IAQF_Inefficient_Markets_2026.pdf">Open PDF</a>
+          </div>
+          <iframe
+            title="IAQF Inefficient Markets 2026 paper"
+            src="assets/papers/IAQF_Inefficient_Markets_2026.pdf#toolbar=1&navpanes=0"
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="resume" class="section resume-section">
+        <div class="section-heading">
+          <p class="eyebrow">Resume</p>
+          <h2>Selected Experience</h2>
+        </div>
+
+        <div class="resume-summary">
+          <div>
+            <h3>Quantitative Research</h3>
+            <p>
+              Macro forecasting, market microstructure, statistical modeling, data engineering,
+              and walk-forward model evaluation.
+            </p>
+          </div>
+          <div>
+            <h3>Portfolio Work</h3>
+            <p>
+              Fixed income research, yield curve modeling, Bloomberg tools, relative value
+              analysis, and portfolio diagnostics.
+            </p>
+          </div>
+          <div>
+            <h3>Leadership</h3>
+            <p>
+              Trading competition leadership, startup operations, teaching, and student investment
+              organization experience.
+            </p>
+          </div>
+        </div>
+
+        <div class="paper-viewer resume-viewer" aria-label="Embedded resume">
+          <div class="viewer-heading">
+            <h3>Resume PDF</h3>
+            <a href="assets/resume/Dhruv_Kohli_Resume.pdf">Open PDF</a>
+          </div>
+          <iframe
+            title="Dhruv Kohli resume"
+            src="assets/resume/Dhruv_Kohli_Resume.pdf#toolbar=1&navpanes=0"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Dhruv Kohli</p>
+      <div>
+        <a href="mailto:dhruvk@uchicago.edu">dhruvk@uchicago.edu</a>
+        <a href="https://github.com/dhruvk1432">github.com/dhruvk1432</a>
+      </div>
+    </footer>
+  </body>
+</html>
