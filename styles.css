@@ -76,13 +76,36 @@ nav a:hover {
   color: var(--text);
 }
 
+.nameplate {
+  display: grid;
+  justify-items: center;
+  padding: clamp(44px, 7vw, 86px) clamp(20px, 6vw, 80px) clamp(32px, 5vw, 56px);
+  text-align: center;
+}
+
+.nameplate-name {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4.5rem, 12vw, 9rem);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.contact-link {
+  margin-top: 18px;
+  color: var(--accent-dark);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 780;
+}
+
 .intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
   gap: clamp(28px, 6vw, 80px);
   align-items: end;
-  min-height: 78vh;
-  padding: clamp(68px, 10vw, 128px) clamp(20px, 6vw, 80px) clamp(48px, 7vw, 72px);
+  min-height: 62vh;
+  padding: clamp(44px, 7vw, 84px) clamp(20px, 6vw, 80px) clamp(48px, 7vw, 72px);
 }
 
 .intro-copy {
