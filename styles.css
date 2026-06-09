@@ -158,7 +158,7 @@ h1,
 h2,
 h3,
 p {
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -338,17 +338,23 @@ h3 {
 }
 
 .focus-list article {
-  display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
-  gap: 16px;
-  padding: 18px;
+  display: block;
+  padding: 20px;
 }
 
 .focus-list span {
+  display: block;
+  margin-bottom: 12px;
   color: var(--berry);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.8rem;
   line-height: 1;
+}
+
+.focus-list h3,
+.focus-list p {
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .focus-list p,

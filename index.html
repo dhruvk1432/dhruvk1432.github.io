@@ -128,15 +128,17 @@
             <p>
               The public summary intentionally avoids feature identities, source mix,
               exact model weights, and live forecast values. What it does show is the
-              research process: leakage-safe data engineering, tree-model forecasting,
-              walk-forward model selection, weighted blending, and honest comparison
-              against consensus benchmarks.
+              research process: leakage-safe data engineering, HMM-triggered feature
+              engineering and selection, tree-model forecasting, walk-forward model
+              selection, weighted blending, and honest comparison against consensus
+              benchmarks.
             </p>
 
             <ul class="proof-list system-list">
               <li>Release-cutoff-safe snapshots and revision-aware target construction.</li>
               <li>Macro, weather, and financial feature pipelines with availability checks.</li>
-              <li>Walk-forward training, model selection, and benchmark comparisons.</li>
+              <li>HMM-triggered feature selection with tree-model gain and Boruta-style shadow tests.</li>
+              <li>Correlation and FDR screens to reduce noisy signals in walk-forward tests.</li>
               <li>Archived reports, output contracts, and stale-artifact validation.</li>
             </ul>
           </div>
@@ -226,7 +228,7 @@
           </div>
           <div>
             <span>03</span>
-            <p>Tree models, walk-forward selection, and blends</p>
+            <p>HMM-triggered selection, tree models, and blends</p>
           </div>
           <div>
             <span>04</span>
@@ -337,8 +339,8 @@
               <h3>Quantitative Researcher, Exponential Technology</h3>
               <p>
                 Built a point-in-time U.S. Nonfarm Payroll forecasting system spanning macro,
-                weather, and financial data, tree-model forecasting, walk-forward validation,
-                and benchmark-aware weighted blends.
+                weather, and financial data, HMM-triggered feature selection, tree-model
+                forecasting, walk-forward validation, and benchmark-aware weighted blends.
               </p>
             </div>
           </article>
