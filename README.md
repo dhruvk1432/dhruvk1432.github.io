@@ -3,10 +3,10 @@
 Static personal website for GitHub Pages. The first version includes:
 
 - Profile copy
-- IAQF Student Competition 2026 winning paper feature
-- Embedded IAQF paper PDF
-- Embedded resume PDF
-- Project figure assets copied from the IAQF research repository
+- Research papers section for the IAQF paper and honors thesis
+- Simple projects section for forecasting, rates, and event-study work
+- IAQF result bubbles without embedded charts or image-heavy sections
+- Resume and contact links
 
 ## Files
 
@@ -14,7 +14,6 @@ Static personal website for GitHub Pages. The first version includes:
 index.html
 styles.css
 assets/
-  images/
   papers/
   resume/
 ```
