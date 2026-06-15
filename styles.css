@@ -319,6 +319,48 @@ p {
   color: var(--ink-soft);
 }
 
+.project-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 14px 0 0;
+}
+
+.project-metrics div {
+  min-height: 78px;
+  padding: 10px;
+  border: 1px solid rgba(14, 104, 104, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.project-metrics dt {
+  color: var(--teal-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  line-height: 1;
+}
+
+.project-metrics div:nth-child(2) dt {
+  color: var(--berry);
+}
+
+.project-metrics div:nth-child(3) dt {
+  color: var(--blue);
+}
+
+.project-metrics div:nth-child(4) dt {
+  color: var(--amber);
+}
+
+.project-metrics dd {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 720;
+  line-height: 1.28;
+}
+
 .project-list span {
   display: inline-flex;
   min-height: 32px;
@@ -332,6 +374,36 @@ p {
   font-weight: 900;
   white-space: nowrap;
   text-transform: uppercase;
+}
+
+.project-actions {
+  display: grid;
+  gap: 8px;
+  min-width: 112px;
+}
+
+.project-actions a {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border: 1px solid rgba(45, 93, 149, 0.22);
+  border-radius: 999px;
+  background: rgba(45, 93, 149, 0.07);
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1.15;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.project-actions a:hover,
+.project-actions a:focus-visible {
+  border-color: rgba(14, 104, 104, 0.46);
+  background: #ffffff;
+  color: var(--berry);
 }
 
 .plain-list li {
@@ -372,8 +444,14 @@ p {
     gap: 10px;
   }
 
-  .project-list span {
+  .project-list span,
+  .project-actions {
     width: fit-content;
+  }
+
+  .project-actions {
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
   }
 }
 
@@ -393,5 +471,9 @@ p {
 
   .result-bubbles {
     grid-template-columns: 1fr;
+  }
+
+  .project-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
