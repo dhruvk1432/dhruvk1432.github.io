@@ -5,454 +5,289 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Dhruv Kohli's quant portfolio: research, trading competitions, market structure work, projects, and resume."
+      content="Dhruv Kohli's quant portfolio: macro forecasting, market microstructure, time-series research projects, and resume."
     >
     <title>Dhruv Kohli | Quant Portfolio</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <a class="skip-link" href="#profile">Skip to content</a>
+    <a class="skip-link" href="#about">Skip to content</a>
 
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Dhruv Kohli home">Dhruv Kohli</a>
+      <a class="brand" href="#top">Dhruv Kohli</a>
       <nav aria-label="Primary navigation">
-        <a href="#profile">Profile</a>
-        <a href="#systems">Systems</a>
+        <a href="#about">About</a>
+        <a href="#nfp">NFP</a>
         <a href="#research">Research</a>
-        <a href="#experience">Experience</a>
-        <a href="#toolkit">Toolkit</a>
-        <a href="#resume">Resume</a>
+        <a href="#work">Work</a>
+        <a href="#links">Links</a>
       </nav>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-inner">
-          <p class="eyebrow">UChicago financial mathematics + quantitative research</p>
-          <h1 id="hero-title">Dhruv Kohli</h1>
-          <p class="hero-copy">
-            I build market research systems that turn messy, lagged, high-frequency, and
-            macroeconomic data into testable signals, risk views, and trading decisions.
-          </p>
-          <div class="hero-actions" aria-label="Primary links">
-            <a class="button primary" href="assets/resume/Dhruv_Kohli_Resume.pdf">View Resume</a>
-            <a class="button" href="#systems">NFP Model</a>
-            <a class="button" href="assets/papers/IAQF_Inefficient_Markets_2026.pdf">Read IAQF Paper</a>
-            <a class="button ghost" href="mailto:dhruvk@uchicago.edu">dhruvk@uchicago.edu</a>
-          </div>
+    <main id="top" class="page-shell">
+      <section id="about" class="intro">
+        <p class="eyebrow">UChicago financial mathematics, mathematics, & economics </p>
+        <h1>Dhruv Kohli</h1>
+
+        <div class="link-row" aria-label="Profile links">
+          <a href="mailto:dhruvk@uchicago.edu">dhruvk@uchicago.edu</a>
+          <span aria-hidden="true">.</span>
+          <a href="assets/resume/Dhruv_Kohli_Resume.pdf">Resume</a>
+          <span aria-hidden="true">.</span>
+          <a href="https://github.com/dhruvk1432">GitHub</a>
+          <span aria-hidden="true">.</span>
+          <a href="assets/papers/IAQF_Inefficient_Markets_2026.pdf">IAQF Paper</a>
         </div>
 
-        <dl class="metric-ribbon" aria-label="Portfolio highlights">
-          <div>
-            <dt>NFP Model</dt>
-            <dd>106-month PIT backtest</dd>
-          </div>
-          <div>
-            <dt>IAQF 2026</dt>
-            <dd>Winning research paper</dd>
-          </div>
-          <div>
-            <dt>CME 2025</dt>
-            <dd>2nd of 1,864 globally</dd>
-          </div>
-          <div>
-            <dt>UChicago</dt>
-            <dd>MS Financial Math, 2026</dd>
-          </div>
-        </dl>
-      </section>
-
-      <section id="profile" class="section intro-section">
-        <div class="section-heading">
-          <p class="eyebrow">Profile</p>
-          <h2>Who am I?</h2>
-        </div>
-        <div class="intro-grid">
-          <div class="intro-copy">
-            <p>
-              Hello! My name is Dhruv Kohli. I am currently a graduate student pursuing
-              an M.S. in Financial Mathematics at the University of Chicago, where I also
-              completed honors degrees in Mathematics and Economics. In my free time I love
-              to play poker, rugby, and basketball, build Lego and random projects, and cook
-              (a lot of cooking).
-            </p>
-            <p>
-              On this site you will find some of my projects and papers. Most of my quant
-              work sits at the intersection of statistical modeling, data engineering,
-              portfolio research, and trading strategy, with a focus on problems where release
-              lags, liquidity, structural breaks, noisy labels, and market constraints matter
-              before a result deserves confidence. Feel free to contact me if you have any
-              questions.
-            </p>
-          </div>
-          <div class="focus-list" aria-label="Current focus areas">
-            <article>
-              <span>01</span>
-              <h3>Forecasting Systems</h3>
-              <p>Point-in-time macro pipelines, walk-forward validation, and model fusion.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>Market Microstructure</h3>
-              <p>Quote fragmentation, stablecoin stress, liquidity frictions, and price discovery.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>Portfolio Analytics</h3>
-              <p>Yield curve models, relative value diagnostics, risk dashboards, and PM tooling.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="systems" class="section systems-section">
-        <div class="section-heading compact">
-          <p class="eyebrow">Flagship System</p>
-          <h2>NFP Forecasting Model</h2>
+        <div class="intro-copy">
           <p>
-            A private, production-grade forecasting stack for U.S. Nonfarm Payrolls,
-            built around point-in-time data, walk-forward validation, and benchmark-aware
-            model blending.
+            I am a graduate student pursuing an M.S. in Financial Mathematics at
+            the University of Chicago, where I also completed my undergraduate studies in mathematics
+            and economics with honors in both.
+          </p>
+          <p>
+            I am interested in Quantitative Research and Trading, with an emphasis on Commodities, Macro, and Options. 
+            In my free time, I enjoy board games, chess, cooking, Lego, poker and rugby.
           </p>
         </div>
 
-        <div class="system-feature">
-          <div class="system-copy">
-            <p>
-              I built an end-to-end NFP forecasting system that turns messy macro,
-              weather, and financial data into release-cutoff-safe forecasts. The system
-              treats every forecast as an event-time problem: data availability, revision
-              timing, missingness, benchmark bias, and stale output risk all have to be
-              controlled before a model result is trusted.
-            </p>
-            <p>
-              The public summary intentionally avoids feature identities, source mix,
-              exact model weights, and live forecast values. What it does show is the
-              research process: leakage-safe data engineering, HMM-triggered feature
-              engineering and selection, tree-model forecasting, walk-forward model
-              selection, weighted blending, and honest comparison against consensus
-              benchmarks.
-            </p>
-
-            <ul class="proof-list system-list">
-              <li>Release-cutoff-safe snapshots and revision-aware target construction.</li>
-              <li>Macro, weather, and financial feature pipelines with availability checks.</li>
-              <li>HMM-triggered feature selection with tree-model gain and Boruta-style shadow tests.</li>
-              <li>Correlation and FDR screens to reduce noisy signals in walk-forward tests.</li>
-              <li>Archived reports, output contracts, and stale-artifact validation.</li>
-            </ul>
-          </div>
-
-          <div class="system-metrics" aria-label="NFP model headline metrics">
-            <div>
-              <span>106</span>
-              <p>Point-in-time out-of-sample months, excluding COVID/reopening distortion.</p>
-            </div>
-            <div>
-              <span>62.8k</span>
-              <p>Model 1 MAE over the latest 50-month evaluation window.</p>
-            </div>
-            <div>
-              <span>75%</span>
-              <p>Model 2 beat median consensus in 75% of the latest 24 monthly forecasts.</p>
-            </div>
-            <div>
-              <span>12.4%</span>
-              <p>Model 1 lower RMSE than median consensus over the latest 50 months.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="model-grid" aria-label="NFP model variants">
+        <div class="focus-list" aria-label="Current focus areas">
           <article>
-            <div class="model-heading">
-              <span>Model 1</span>
-              <h3>Error-Minimizing Blend</h3>
-            </div>
-            <p>
-              A tree-model signal routed through walk-forward selection, benchmark
-              anchoring, and MAE-optimized weighting. It is designed to minimize the
-              absolute miss size while staying inside a strict point-in-time contract.
-            </p>
-            <dl class="model-metrics">
-              <div>
-                <dt>62.8k</dt>
-                <dd>50-month MAE vs 70.8k median consensus</dd>
-              </div>
-              <div>
-                <dt>11.3%</dt>
-                <dd>lower MAE than median consensus over the latest 50 months</dd>
-              </div>
-              <div>
-                <dt>12.4%</dt>
-                <dd>lower RMSE than median consensus, penalizing large misses more heavily</dd>
-              </div>
-            </dl>
-          </article>
-
-          <article>
-            <div class="model-heading">
-              <span>Model 2</span>
-              <h3>Adaptive Benchmark Blend</h3>
-            </div>
-            <p>
-              A dynamic weighted blend that changes how much it trusts the independent
-              model signal versus the benchmark through walk-forward evidence. It is
-              strongest as a stable benchmark-beating layer across repeated windows.
-            </p>
-            <dl class="model-metrics">
-              <div>
-                <dt>75%</dt>
-                <dd>beat median consensus in 75% of the latest 24 monthly forecasts</dd>
-              </div>
-              <div>
-                <dt>74%</dt>
-                <dd>beat median consensus in 74% of the latest 50 monthly forecasts</dd>
-              </div>
-              <div>
-                <dt>66%</dt>
-                <dd>beat median consensus in 66% of the full 106-month window</dd>
-              </div>
-            </dl>
-          </article>
-        </div>
-
-        <div class="pipeline-strip" aria-label="NFP forecasting workflow">
-          <div>
             <span>01</span>
-            <p>Macro, weather, and financial inputs</p>
-          </div>
-          <div>
+            <h3>Forecasting Systems</h3>
+            <p>Point-in-time macro pipelines, walk-forward validation, and model fusion</p>
+          </article>
+          <article>
             <span>02</span>
-            <p>Point-in-time snapshots and release calendars</p>
-          </div>
-          <div>
+            <h3>Market Microstructure</h3>
+            <p>Quote fragmentation, stablecoin stress, liquidity frictions, and price discovery</p>
+          </article>
+          <article>
             <span>03</span>
-            <p>HMM-triggered selection, tree models, and blends</p>
-          </div>
-          <div>
-            <span>04</span>
-            <p>Archived metrics, reports, and forecast checks</p>
-          </div>
+            <h3>Portfolio Analytics & Optimization</h3>
+            <p>Yield curve models, relative value tools, and PM dashboards</p>
+          </article>
         </div>
-
-        <p class="disclosure-note">
-          Disclosure boundary: feature names, source-level construction, exact weights,
-          model internals, and live forecast values are intentionally omitted.
-        </p>
       </section>
 
-      <section id="research" class="section research-section">
-        <div class="section-heading compact">
-          <p class="eyebrow">Featured Research</p>
-          <h2>Cross-Currency Dynamics in Cryptocurrencies</h2>
+      <section id="nfp" class="section nfp-section">
+        <div class="section-heading">
+          <p class="eyebrow">Confidential company forecasting project</p>
+          <h2>NFP Forecasting Results</h2>
           <p>
-            Winning Paper, IAQF Student Competition 2026 with Prashanth Bhaskara,
-            Sparsh Agarwal, and Sankalp Yadav.
+            A private U.S. Nonfarm Payrolls forecasting engagement. Public materials
+            are limited to approved aggregate results and high-level evaluation context;
+            proprietary data, model design, and implementation details are withheld.
           </p>
         </div>
 
-        <div class="research-feature">
-          <div class="research-copy">
+        <div class="nfp-grid">
+          <div class="nfp-copy">
             <p>
-              We studied the March 2023 USDC de-peg after Silicon Valley Bank collapsed,
-              using 1-minute data from Binance, Coinbase, and Kraken to separate visible
-              quote-currency fragmentation from true USD-adjusted arbitrage residuals.
+              The project was built for a company under confidentiality constraints.
+              The public summary focuses on what can be disclosed: out-of-sample forecast
+              performance, benchmark comparison, and release-cycle reliability.
             </p>
-            <p>
-              The result is a sharp two-layer market story: the adjusted BTC basis mean-reverted
-              in about 0.6 minutes during the crisis, while the USDC peg deviation persisted for
-              roughly 572 minutes. The durable failure localized to the stablecoin reserve layer,
-              but the stress still propagated into liquidity, volatility, and executable arbitrage.
-            </p>
-            <ul class="proof-list">
-              <li>High-frequency crypto venue pipeline across major exchanges.</li>
-              <li>Stablecoin peg decomposition with adjusted basis residuals.</li>
-              <li>Market microstructure analysis of stress, depth, and price discovery.</li>
-              <li>Post-friction arbitrage tests under fee and slippage assumptions.</li>
+            <ul>
+              <li>Company project; proprietary data and methodology are not public.</li>
+              <li>Results shown only as aggregate forecast accuracy and benchmark comparisons.</li>
+              <li>No raw data, feature list, source-specific detail, or model recipe is disclosed.</li>
+              <li>Evaluation emphasizes performance over a held-out release window.</li>
             </ul>
-            <div class="action-row">
-              <a class="button primary" href="assets/papers/IAQF_Inefficient_Markets_2026.pdf">Open Paper</a>
-              <a class="button" href="https://github.com/dhruvk1432/IAQF_2026_Inefficient_Markets">GitHub Repo</a>
-            </div>
           </div>
 
-          <div class="research-stats" aria-label="Research statistics">
-            <div>
-              <span>0.6 min</span>
-              <p>Adjusted basis half-life during crisis</p>
-            </div>
-            <div>
-              <span>572 min</span>
-              <p>USDC peg deviation half-life</p>
-            </div>
-            <div>
-              <span>1-min</span>
-              <p>Exchange data synchronized on UTC grid</p>
-            </div>
-            <div>
-              <span>5,000</span>
-              <p>Moving-block bootstrap replications</p>
-            </div>
+          <div class="result-grid" aria-label="NFP headline results">
+            <article>
+              <span>106</span>
+              <p>point-in-time OOS months, excluding COVID/reopening distortion</p>
+            </article>
+            <article>
+              <span>62.8k</span>
+              <p>50-month MAE vs 70.8k median consensus</p>
+            </article>
+            <article>
+              <span>12.4%</span>
+              <p>Lower RMSE than median consensus over 50 months</p>
+            </article>
+            <article>
+              <span>75%</span>
+              <p>Beat median consensus in 74% of the latest 50 forecasts and 75% on the latest 24</p>
+            </article>
           </div>
         </div>
 
-        <div class="figure-grid" aria-label="Research visuals">
-          <figure>
-            <img
-              src="assets/images/iaqf-dispersion-adjusted.png"
-              alt="Kraken crisis decomposition showing unadjusted USDC dispersion and adjusted residuals."
-            >
-            <figcaption>
-              Nominal USDC dispersion compresses once the stablecoin leg is marked back to USD.
-            </figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/images/iaqf-stablecoin-peg.png"
-              alt="Stablecoin prices and peg deviations during the March 2023 SVB crisis."
-            >
-            <figcaption>
-              USDC breaks below par while USDT trades at a premium during the stress window.
-            </figcaption>
-          </figure>
+        <div class="model-row" aria-label="NFP model summaries">
+          <article>
+            <div class="model-label">Disclosure</div>
+            <h3>Confidential Methodology</h3>
+            <p>
+              The public version intentionally omits proprietary data sources, feature
+              construction, model architecture, and implementation details.
+            </p>
+          </article>
+          <article>
+            <div class="model-label">Result</div>
+            <h3>Aggregate Performance</h3>
+            <p>
+              The disclosed summary reports only aggregate out-of-sample performance
+              relative to a consensus benchmark over approved evaluation windows.
+            </p>
+          </article>
         </div>
       </section>
 
-      <section id="experience" class="section experience-section">
+      <section id="research" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Research + Projects</p>
+          <h2>Selected Work</h2>
+        </div>
+
+        <ul class="link-list">
+          <li>
+            <a href="assets/papers/IAQF_Inefficient_Markets_2026.pdf">Cross-Currency Dynamics in Cryptocurrencies</a>
+            <span>Winning IAQF 2026 paper on USDC de-peg dynamics, high-frequency exchange data, and USD-adjusted arbitrage residuals.</span>
+          </li>
+          <li>
+            <a href="https://github.com/dhruvk1432/IAQF_2026_Inefficient_Markets">IAQF Research Repository</a>
+            <span>Reproducible market microstructure pipeline, crisis-window analysis, bootstrap tests, and trading-friction checks.</span>
+          </li>
+          <li>
+            <a href="assets/papers/SOFR_Cap_Forward_Volatility.pdf">SOFR Cap Forward-Volatility Paper</a>
+            <span>Caplet stripping, rates-vol risk premia diagnostics, and leakage-aware carry research with public-repo artifact checks.</span>
+          </li>
+          <li>
+            <a href="#nfp">NFP Forecasting System</a>
+            <span>Private macro forecasting stack summarized above; public details omit feature identities and live forecasts.</span>
+          </li>
+          <li>
+            <a href="assets/resume/Dhruv_Kohli_Resume.pdf">CME Trading Challenge + Fixed Income Tools</a>
+            <span>Competition trading, Nelson-Siegel curves, z-score diagnostics, Bloomberg workflows, and BQuant/VBA tools.</span>
+          </li>
+        </ul>
+
+        <div class="project-grid" aria-label="Advanced time series research projects">
+          <article class="project-card">
+            <p class="project-kicker">Macro event study + LP-IV</p>
+            <h3>AI Capex Shock</h3>
+            <p>
+              Measures whether AI-linked earnings and infrastructure announcements carry
+              macro-relevant information for rates and credit markets. The project emphasizes
+              timestamp discipline, event-window construction, instrument diagnostics, and
+              robustness checks that separate narrative signal from confounding market news.
+            </p>
+            <div class="project-links" aria-label="AI Capex Shock links">
+              <a href="assets/papers/AI_Capex_Shock_Paper.pdf">Paper</a>
+              <a href="assets/slides/AI_Capex_Shock_Slides.pdf">Slides</a>
+              <a href="https://github.com/dhruvk1432/Advanced-Time-Series-Analysis/tree/main/AI-Capex-Shock">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <p class="project-kicker">Treasury supply news + yield curves</p>
+            <h3>Yield-Curve Transmission</h3>
+            <p>
+              Builds high-frequency Treasury supply shocks around refunding and auction news,
+              then traces how those shocks transmit across yields, term premia, volatility
+              regimes, dealer balance-sheet states, and placebo non-event windows. The repo
+              documents the public version while keeping licensed raw data out of Git.
+            </p>
+            <div class="project-links" aria-label="Yield-Curve Transmission links">
+              <a href="assets/papers/Treasury_Supply_News_Yield_Curve_Transmission_Paper.pdf">Paper</a>
+              <a href="assets/slides/Treasury_Supply_News_Yield_Curve_Transmission_Slides.pdf">Slides</a>
+              <a href="https://github.com/dhruvk1432/Advanced-Time-Series-Analysis/tree/main/Treasury-Supply-News-Yield-Curve-Transmission">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <p class="project-kicker">SOFR caps + rates-vol premia</p>
+            <h3>SOFR Cap Forward Volatility</h3>
+            <p>
+              SOFR cap forward-volatility stripping, rates-vol risk premia, and
+              leakage-aware carry research; public repo is a research artifact,
+              not a live caplet trading system.
+            </p>
+            <div class="project-links" aria-label="SOFR Cap Forward Volatility links">
+              <a href="assets/papers/SOFR_Cap_Forward_Volatility.pdf">Paper</a>
+              <a href="https://github.com/dhruvk1432/SOFR-Cap-Forward-Volatility">GitHub</a>
+            </div>
+          </article>
+        </div>
+
+        <figure class="research-preview">
+          <img
+            src="assets/images/iaqf-dispersion-adjusted.png"
+            alt="Kraken crisis decomposition showing unadjusted USDC dispersion and adjusted residuals."
+          >
+          <figcaption>
+            IAQF result: nominal USDC dispersion compresses once the stablecoin leg is marked back to USD.
+          </figcaption>
+        </figure>
+
+        <figure class="research-preview">
+          <img
+            src="assets/images/sofr-forward-vol-surface.png"
+            alt="SOFR stripped forward normal-volatility surface by date and tenor."
+          >
+          <figcaption>
+            SOFR result: stripped forward-normal-vol surface used to separate expectations tests from a stylized rates-vol carry screen.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="work" class="section">
         <div class="section-heading">
           <p class="eyebrow">Experience</p>
-          <h2>Research, portfolios, ventures, and teaching.</h2>
+          <h2>Work</h2>
         </div>
 
-        <div class="timeline">
-          <article>
-            <div class="time">Jun 2026</div>
+        <ul class="timeline-list">
+          <li>
+            <time>2026</time>
             <div>
               <h3>Incoming Quantitative &amp; Market Risk Intern, MET Sales and Trading</h3>
               <p>Zurich-based market risk and quantitative internship beginning June 2026.</p>
             </div>
-          </article>
-          <article>
-            <div class="time">2025-2026</div>
+          </li>
+          <li>
+            <time>2025-2026</time>
             <div>
               <h3>Quantitative Researcher, Exponential Technology</h3>
-              <p>
-                Built a point-in-time U.S. Nonfarm Payroll forecasting system spanning macro,
-                weather, and financial data, HMM-triggered feature selection, tree-model
-                forecasting, walk-forward validation, and benchmark-aware weighted blends.
-              </p>
+              <p>Confidential U.S. Nonfarm Payrolls forecasting engagement with public detail limited to aggregate benchmark-relative results.</p>
             </div>
-          </article>
-          <article>
-            <div class="time">2023-2024</div>
+          </li>
+          <li>
+            <time>2023-2024</time>
             <div>
               <h3>Assistant Portfolio Manager Intern, AXA Investment Managers</h3>
-              <p>
-                Developed Nelson-Siegel yield curve tools, z-score diagnostics, Bloomberg data
-                workflows, and BQuant/VBA applications for fixed income research.
-              </p>
+              <p>Fixed income research tools, yield-curve diagnostics, Bloomberg workflows, and BQuant/VBA applications.</p>
             </div>
-          </article>
-          <article>
-            <div class="time">2023-2024</div>
-            <div>
-              <h3>Chief Operating Officer, Resolv</h3>
-              <p>
-                Helped scale a Web3 asset protection startup through fundraising, operations,
-                user acquisition, and early market validation.
-              </p>
-            </div>
-          </article>
-          <article>
-            <div class="time">2021-2026</div>
+          </li>
+          <li>
+            <time>2021-2026</time>
             <div>
               <h3>Teaching + Phoenix Funds Leadership</h3>
-              <p>
-                TA for economics and mathematics courses, and former Co-President of Phoenix Funds
-                with a focus on fixed income and derivatives education.
-              </p>
+              <p>Economics and mathematics TA work, fixed income education, and student investment organization leadership.</p>
             </div>
-          </article>
-        </div>
+          </li>
+        </ul>
       </section>
 
-      <section id="toolkit" class="section toolkit-section">
-        <div class="section-heading compact">
-          <p class="eyebrow">Toolkit</p>
-          <h2>What I use to move from question to evidence.</h2>
-        </div>
-
-        <div class="toolkit-grid">
-          <article>
-            <h3>Programming</h3>
-            <p>Python, SQL, R, VBA, MATLAB, BQuant</p>
-          </article>
-          <article>
-            <h3>Modeling</h3>
-            <p>Machine learning, econometrics, optimization, Monte Carlo, time series</p>
-          </article>
-          <article>
-            <h3>Markets</h3>
-            <p>Fixed income, derivatives, macro data, market microstructure, crypto rails</p>
-          </article>
-          <article>
-            <h3>Outside the Terminal</h3>
-            <p>Poker, rugby, basketball, chess, cooking, Lego, travel, and board games</p>
-          </article>
-        </div>
-
-        <div class="awards-strip" aria-label="Awards and credentials">
-          <span>2025 CME Trading Challenge: 2nd of 1,864</span>
-          <span>2024 UChicago New Venture Challenge: 3rd place</span>
-          <span>Akuna Capital Options 101 and 201</span>
-        </div>
-      </section>
-
-      <section id="resume" class="section resume-section">
+      <section id="links" class="section links-section">
         <div class="section-heading">
-          <p class="eyebrow">Documents</p>
-          <h2>Resume and research, embedded for quick review.</h2>
+          <p class="eyebrow">Links</p>
+          <h2>Documents + Contact</h2>
         </div>
 
-        <div class="document-grid">
-          <article class="document-panel">
-            <div class="viewer-heading">
-              <div>
-                <p class="eyebrow">Resume</p>
-                <h3>Dhruv_Kohli_Resume.pdf</h3>
-              </div>
-              <a href="assets/resume/Dhruv_Kohli_Resume.pdf">Open PDF</a>
-            </div>
-            <iframe
-              title="Dhruv Kohli resume"
-              src="assets/resume/Dhruv_Kohli_Resume.pdf#toolbar=1&amp;navpanes=0"
-            ></iframe>
-          </article>
-
-          <article class="document-panel">
-            <div class="viewer-heading">
-              <div>
-                <p class="eyebrow">Paper</p>
-                <h3>IAQF_Inefficient_Markets_2026.pdf</h3>
-              </div>
-              <a href="assets/papers/IAQF_Inefficient_Markets_2026.pdf">Open PDF</a>
-            </div>
-            <iframe
-              title="IAQF Inefficient Markets 2026 paper"
-              src="assets/papers/IAQF_Inefficient_Markets_2026.pdf#toolbar=1&amp;navpanes=0"
-            ></iframe>
-          </article>
+        <div class="document-links">
+          <a class="button primary" href="assets/resume/Dhruv_Kohli_Resume.pdf">Resume</a>
+          <a class="button" href="assets/papers/IAQF_Inefficient_Markets_2026.pdf">IAQF Paper</a>
+          <a class="button" href="assets/papers/SOFR_Cap_Forward_Volatility.pdf">SOFR Paper</a>
+          <a class="button" href="https://github.com/dhruvk1432">GitHub</a>
+          <a class="button" href="mailto:dhruvk@uchicago.edu">Email</a>
         </div>
+
+        <p class="footer-note">Last updated June 2026.</p>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <p>Dhruv Kohli</p>
-      <div>
-        <a href="mailto:dhruvk@uchicago.edu">dhruvk@uchicago.edu</a>
-        <a href="https://github.com/dhruvk1432">GitHub</a>
-      </div>
-    </footer>
   </body>
 </html>
