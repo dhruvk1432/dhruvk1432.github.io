@@ -3,8 +3,8 @@
 Static personal website for GitHub Pages. The first version includes:
 
 - Profile copy
-- Research papers section for the IAQF paper and honors thesis
-- Simple projects section for forecasting, rates, and event-study work
+- Research papers section for selected academic papers and research systems
+- Simple projects section for forecasting, options, rates, and event-study work
 - IAQF result bubbles without embedded charts or image-heavy sections
 - Resume and contact links
 
