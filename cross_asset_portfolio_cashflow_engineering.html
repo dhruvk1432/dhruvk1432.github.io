@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Working paper by Dhruv Kohli on cross-asset portfolio construction as cashflow engineering."
+    >
+    <title>Cross-Asset Portfolio Construction as Cashflow Engineering | Dhruv Kohli</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#abstract">Skip to content</a>
+
+    <main class="container paper-page">
+      <header class="site-intro">
+        <p class="eyebrow">Working Paper</p>
+        <h2>Cross-Asset Portfolio Construction as Cashflow Engineering</h2>
+        <nav class="links" aria-label="Paper links">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">.</span>
+          <a href="assets/papers/cross_asset_portfolio_cashflow_engineering_dhruv_kohli.pdf">PDF</a>
+          <span aria-hidden="true">.</span>
+          <a href="https://github.com/dhruvk1432/Cross_Asset_Portfolio_Optimization">Code</a>
+        </nav>
+      </header>
+
+      <section id="abstract" class="section paper-detail">
+        <p class="paper-byline">Dhruv Kohli</p>
+        <p>
+          This paper studies cross-asset allocation as domestic cashflow
+          engineering. Starting from SPY exposure, it asks whether stocks inside
+          the index, gold, copper, VIX futures, Treasuries, and SPY options
+          improve the book after funding, transaction costs, option premia,
+          drawdowns, and tail losses are charged.
+        </p>
+        <p>
+          The empirical design builds a daily execution panel and aggregates
+          executed P&amp;L to the monthly evaluation horizon. In this sample and
+          under these conventions, downside-aware cross-asset allocation improves
+          the tested SPY path. Option convexity is useful only conditionally
+          after premium, skew, hedge cost, execution cost, and realized state are
+          considered. Machine-learning forecasts are treated as uncertain inputs,
+          not automatic trades.
+        </p>
+
+        <div class="paper-actions" aria-label="Download and code links">
+          <a class="button primary" href="assets/papers/cross_asset_portfolio_cashflow_engineering_dhruv_kohli.pdf">Download PDF</a>
+          <a class="button" href="https://github.com/dhruvk1432/Cross_Asset_Portfolio_Optimization">Code Repository</a>
+        </div>
+      </section>
+
+      <section class="section paper-detail">
+        <div class="section-heading">
+          <h2>Reproduction</h2>
+        </div>
+        <pre class="repro-block"><code>python -m xasset_portfolio.run --config configs/base.yml
+python scripts/paper_qa.py
+python -m pytest</code></pre>
+        <p class="disclaimer">
+          Research paper only. The results are not investment advice, a live
+          trading claim, or evidence of production trading performance.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <h2>Selected Figures</h2>
+          <p>Primary diagnostics from the final paper build.</p>
+        </div>
+
+        <div class="figure-grid">
+          <figure>
+            <img
+              src="assets/papers/cross_asset_portfolio_cashflow_engineering/oos_equity_curve.png"
+              alt="Out-of-sample wealth paths for SPY, 60/40, and downside-score portfolios."
+            >
+            <figcaption>Out-of-sample wealth paths after daily execution is aggregated to monthly returns.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/papers/cross_asset_portfolio_cashflow_engineering/oos_drawdown.png"
+              alt="Out-of-sample drawdown paths for SPY, 60/40, and downside-score portfolios."
+            >
+            <figcaption>Drawdown paths showing depth, duration, and recovery across the primary books.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/papers/cross_asset_portfolio_cashflow_engineering/objective_comparison.png"
+              alt="Objective comparison figure showing Sortino and maximum drawdown by allocator."
+            >
+            <figcaption>Objective comparison showing how the admitted portfolio changes with the risk objective.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p><a href="index.html">Back to home</a></p>
+      </footer>
+    </main>
+  </body>
+</html>

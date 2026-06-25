@@ -406,6 +406,76 @@ p {
   color: var(--berry);
 }
 
+.paper-page .site-intro {
+  padding-bottom: 28px;
+}
+
+.paper-detail {
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 1.8vw, 1.08rem);
+}
+
+.paper-detail p + p {
+  margin-top: 14px;
+}
+
+.paper-byline {
+  margin-bottom: 14px;
+  color: var(--ink);
+  font-weight: 820;
+}
+
+.paper-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.repro-block {
+  overflow-x: auto;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid rgba(14, 104, 104, 0.18);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.91rem;
+  line-height: 1.55;
+}
+
+.disclaimer {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.figure-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.figure-grid figure {
+  margin: 0;
+  padding: 0;
+}
+
+.figure-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.figure-grid figcaption {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.42;
+}
+
 .plain-list li {
   padding: 15px 0;
   border-top: 1px solid var(--line);
