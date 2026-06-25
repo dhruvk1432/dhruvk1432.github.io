@@ -4,6 +4,7 @@ Static personal website for GitHub Pages. The first version includes:
 
 - Profile copy
 - Research papers section for selected academic papers and research systems
+- Dedicated cross-asset portfolio paper page for the v1.0.1 public release
 - Simple projects section for forecasting, options, rates, and event-study work
 - IAQF result bubbles without embedded charts or image-heavy sections
 - Resume and contact links
@@ -12,10 +13,43 @@ Static personal website for GitHub Pages. The first version includes:
 
 ```text
 index.html
+cross_asset_portfolio_cashflow_engineering.html
 styles.css
 assets/
   papers/
+    cross_asset_portfolio_cashflow_engineering_dhruv_kohli.pdf
+    Cross_Asset_Portfolio_Construction_Cashflow_Engineering.pdf
+    cross_asset_portfolio_cashflow_engineering/
+      oos_equity_curve.png
+      oos_drawdown.png
+      objective_comparison.png
   resume/
+```
+
+The canonical cross-asset PDF filename is
+`assets/papers/cross_asset_portfolio_cashflow_engineering_dhruv_kohli.pdf`.
+The older `Cross_Asset_Portfolio_Construction_Cashflow_Engineering.pdf`
+filename is kept as a compatibility copy and should be refreshed whenever the
+canonical paper asset changes.
+
+## Cross-Asset Paper Release
+
+Current website version: `v1.0.1`.
+
+Source repository:
+`https://github.com/dhruvk1432/Cross_Asset_Portfolio_Optimization`
+
+Release tag:
+`https://github.com/dhruvk1432/Cross_Asset_Portfolio_Optimization/tree/v1.0.1`
+
+Core reproduction commands:
+
+```bash
+PYTHONPATH=src python -m xasset_portfolio.run --config configs/base.yml
+python scripts/paper_qa.py
+python -m pytest
+FULL_RAW_REBUILD=1 make audit
+make paper
 ```
 
 ## Publish On GitHub Pages
