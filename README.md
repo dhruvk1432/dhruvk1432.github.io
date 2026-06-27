@@ -39,7 +39,7 @@ The canonical option-only Markowitz PDF filename is
 `assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf`.
 
 Source repository:
-`https://github.com/dhruvk1432/Option_Only_Markowitz_Cashflow_Engineering`
+`https://github.com/dhruvk1432/Option_Portfolio_Greek_Risk_Premia`
 
 ## Cross-Asset Paper Release
 
