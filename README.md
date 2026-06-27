@@ -4,7 +4,7 @@ Static personal website for GitHub Pages. The first version includes:
 
 - Profile copy
 - Research papers section for selected academic papers and research systems
-- Dedicated cross-asset portfolio paper page for the v1.0.1 public release
+- Dedicated cross-asset portfolio paper page for the June 2026 admission-audit build
 - Option-only portfolio optimization paper entry with PDF and public
   source repository links
 - Simple projects section for forecasting, options, rates, and event-study work
@@ -43,21 +43,22 @@ Source repository:
 
 ## Cross-Asset Paper Release
 
-Current website version: `v1.0.1`.
+Current website build: June 2026 admission-audit rewrite.
 
 Source repository:
 `https://github.com/dhruvk1432/Cross_Asset_Portfolio_Optimization`
 
-Release tag:
-`https://github.com/dhruvk1432/Cross_Asset_Portfolio_Optimization/tree/v1.0.1`
+Current source build:
+`https://github.com/dhruvk1432/Cross_Asset_Portfolio_Optimization/tree/main`
 
 Core reproduction commands:
 
 ```bash
-PYTHONPATH=src python -m xasset_portfolio.run --config configs/base.yml
-python scripts/paper_qa.py
-python -m pytest
-FULL_RAW_REBUILD=1 make audit
+make reproduce
+make validate
+make audit
+make qa
+make test
 make paper
 ```
 

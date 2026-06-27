@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Research paper by Dhruv Kohli on cross-asset portfolio construction as cashflow engineering. Current public release: v1.0.1."
+      content="Admission-audit rewrite of Dhruv Kohli's cross-asset portfolio paper: which sleeves deserve capital after costs, cashflow accounting, and downside validation?"
     >
     <title>Cross-Asset Portfolio Construction as Cashflow Engineering | Dhruv Kohli</title>
     <link rel="stylesheet" href="styles.css">
@@ -15,42 +15,58 @@
 
     <main class="container paper-page">
       <header class="site-intro">
-        <p class="eyebrow">Research Paper · v1.0.1</p>
+        <p class="eyebrow">Research Paper &middot; Admission-Audit Rewrite</p>
         <h2>Cross-Asset Portfolio Construction as Cashflow Engineering</h2>
         <nav class="links" aria-label="Paper links">
           <a href="index.html">Home</a>
           <span aria-hidden="true">.</span>
-          <a href="assets/papers/cross_asset_portfolio_cashflow_engineering_dhruv_kohli.pdf?v=1.0.1">PDF</a>
+          <a href="assets/papers/cross_asset_portfolio_cashflow_engineering_dhruv_kohli.pdf?v=2026-06-27">PDF</a>
           <span aria-hidden="true">.</span>
           <a href="https://github.com/dhruvk1432/Cross_Asset_Portfolio_Optimization">Code</a>
           <span aria-hidden="true">.</span>
-          <a href="https://github.com/dhruvk1432/Cross_Asset_Portfolio_Optimization/tree/v1.0.1">Release Tag</a>
+          <a href="https://github.com/dhruvk1432/Cross_Asset_Portfolio_Optimization/tree/main">Current Build</a>
         </nav>
       </header>
 
       <section id="abstract" class="section paper-detail">
-        <p class="paper-byline">Dhruv Kohli · Public release v1.0.1 · June 2026</p>
+        <p class="paper-byline">Dhruv Kohli &middot; Admission-audit rewrite &middot; June 2026</p>
         <p>
-          This paper studies cross-asset allocation as domestic cashflow
-          engineering. Starting from SPY exposure, it asks whether stocks inside
-          the index, gold, copper, VIX futures, Treasuries, and SPY options
-          improve the book after funding, transaction costs, option premia,
-          drawdowns, and tail losses are charged.
+          This paper is now framed as a capital-admission audit. It asks one
+          question: which sleeves deserve risk budget after funding, transaction
+          costs, option premia, cashflow accounting, drawdowns, and tail losses
+          are charged?
         </p>
         <p>
-          The empirical design builds a daily execution panel and aggregates
-          executed P&amp;L to the monthly evaluation horizon. In this sample and
-          under these conventions, downside-aware cross-asset allocation improves
-          the tested SPY path. Option convexity is useful only conditionally
-          after premium, skew, hedge cost, execution cost, and realized state are
-          considered. Machine-learning forecasts are treated as uncertain inputs,
-          not automatic trades.
+          The empirical work is unchanged, but the presentation is cleaner. The
+          paper admits the downside-score cross-asset book as the main allocation,
+          qualifies option sleeves as conditional downside protection, rejects the
+          ML forecast arm as a capital rule, and keeps fixed option overlays as
+          diagnostics rather than standing trades.
         </p>
 
+        <dl class="result-bubbles paper-results" aria-label="Admission audit findings">
+          <div>
+            <dt>Admitted</dt>
+            <dd>Downside-score cross-asset allocation: 15.12% annual return, Sortino 2.00, max drawdown -19.87%.</dd>
+          </div>
+          <div>
+            <dt>Qualified</dt>
+            <dd>Option sleeves reduce drawdown and CVaR, but the return give-up keeps them conditional.</dd>
+          </div>
+          <div>
+            <dt>Rejected</dt>
+            <dd>ML forecasts remain research inputs because they do not beat the simpler rule at portfolio level.</dd>
+          </div>
+          <div>
+            <dt>Diagnostic</dt>
+            <dd>Fixed SPY put and collar overlays remain useful for stress checks, not capital admission.</dd>
+          </div>
+        </dl>
+
         <div class="paper-actions" aria-label="Download and code links">
-          <a class="button primary" href="assets/papers/cross_asset_portfolio_cashflow_engineering_dhruv_kohli.pdf?v=1.0.1">Download PDF</a>
+          <a class="button primary" href="assets/papers/cross_asset_portfolio_cashflow_engineering_dhruv_kohli.pdf?v=2026-06-27">Download PDF</a>
           <a class="button" href="https://github.com/dhruvk1432/Cross_Asset_Portfolio_Optimization">Code Repository</a>
-          <a class="button" href="https://github.com/dhruvk1432/Cross_Asset_Portfolio_Optimization/tree/v1.0.1">v1.0.1 Tag</a>
+          <a class="button" href="https://github.com/dhruvk1432/Cross_Asset_Portfolio_Optimization/tree/main">Current Build</a>
         </div>
       </section>
 
@@ -58,42 +74,43 @@
         <div class="section-heading">
           <h2>Reproduction</h2>
         </div>
-        <pre class="repro-block"><code>PYTHONPATH=src python -m xasset_portfolio.run --config configs/base.yml
-python scripts/paper_qa.py
-python -m pytest
-FULL_RAW_REBUILD=1 make audit
+        <pre class="repro-block"><code>make reproduce
+make validate
+make audit
+make qa
+make test
 make paper</code></pre>
         <p class="disclaimer">
           Research paper only. The results are not investment advice, a live
           trading claim, or evidence of production trading performance. The
-          PDF and selected figures on this page correspond to the v1.0.1 release.
+          PDF and selected figures on this page correspond to the June 2026 admission-audit build.
         </p>
       </section>
 
       <section class="section">
         <div class="section-heading">
           <h2>Selected Figures</h2>
-          <p>Primary diagnostics from the v1.0.1 paper build.</p>
+          <p>Primary diagnostics from the admission-audit paper build.</p>
         </div>
 
         <div class="figure-grid">
           <figure>
             <img
-              src="assets/papers/cross_asset_portfolio_cashflow_engineering/oos_equity_curve.png?v=1.0.1"
+              src="assets/papers/cross_asset_portfolio_cashflow_engineering/oos_equity_curve.png?v=2026-06-27"
               alt="Out-of-sample wealth paths for SPY, 60/40, and downside-score portfolios."
             >
             <figcaption>Out-of-sample wealth paths after daily execution is aggregated to monthly returns.</figcaption>
           </figure>
           <figure>
             <img
-              src="assets/papers/cross_asset_portfolio_cashflow_engineering/oos_drawdown.png?v=1.0.1"
+              src="assets/papers/cross_asset_portfolio_cashflow_engineering/oos_drawdown.png?v=2026-06-27"
               alt="Out-of-sample drawdown paths for SPY, 60/40, and downside-score portfolios."
             >
             <figcaption>Drawdown paths showing depth, duration, and recovery across the primary books.</figcaption>
           </figure>
           <figure>
             <img
-              src="assets/papers/cross_asset_portfolio_cashflow_engineering/objective_comparison.png?v=1.0.1"
+              src="assets/papers/cross_asset_portfolio_cashflow_engineering/objective_comparison.png?v=2026-06-27"
               alt="Objective comparison figure showing Sortino and maximum drawdown by allocator."
             >
             <figcaption>Objective comparison showing how the admitted portfolio changes with the risk objective.</figcaption>

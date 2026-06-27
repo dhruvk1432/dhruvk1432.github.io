@@ -247,6 +247,18 @@ p {
   line-height: 1.38;
 }
 
+.paper-results {
+  margin-bottom: 4px;
+}
+
+.paper-results div {
+  min-height: 150px;
+}
+
+.paper-results dt {
+  font-size: clamp(1.2rem, 2.4vw, 1.72rem);
+}
+
 .action-links,
 .button-row {
   display: flex;
