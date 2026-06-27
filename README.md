@@ -5,8 +5,8 @@ Static personal website for GitHub Pages. The first version includes:
 - Profile copy
 - Research papers section for selected academic papers and research systems
 - Dedicated cross-asset portfolio paper page for the June 2026 admission-audit build
-- Option-only portfolio optimization paper entry with PDF and public
-  source repository links
+- Option-only portfolio optimization paper entry with PDF, public source
+  repository link, and bounded quantitative summary
 - Simple projects section for forecasting, options, rates, and event-study work
 - IAQF result bubbles without embedded charts or image-heavy sections
 - Resume and contact links
@@ -35,11 +35,20 @@ The older `Cross_Asset_Portfolio_Construction_Cashflow_Engineering.pdf`
 filename is kept as a compatibility copy and should be refreshed whenever the
 canonical paper asset changes.
 
-The canonical option-only Markowitz PDF filename is
+The canonical option-only portfolio optimization PDF filename is
 `assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf`.
 
 Source repository:
 `https://github.com/dhruvk1432/Option_Portfolio_Greek_Risk_Premia`
+
+Website summary: the paper builds a NAV-normalized options-only Markowitz
+analogue for listed calls and puts, modeling premiums paid/received, payoff and
+settlement conventions, short-option proceeds, Greek-induced covariance, and
+conditional option-risk premia. In OOS tests, the VIX-enhanced Greek-Markowitz
+sleeve reached 1.37 Sharpe / 3.39 Sortino gross and 1.03 / 2.21 after
+full-spread cost screens, using 536 exact VRO/SOQ VIX settlement rows. The site
+should continue to frame these as pre-production research diagnostics, not
+broker-executed alpha claims.
 
 ## Cross-Asset Paper Release
 

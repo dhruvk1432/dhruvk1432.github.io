@@ -80,27 +80,25 @@
 
         <article class="paper-card">
           <div class="item-main">
-            <p class="kicker">Option Portfolio Construction · Pre-production Research</p>
+            <p class="kicker">Option Portfolio Optimization · Greek Covariance · Pre-production Research</p>
             <h3>
               <a href="assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf?v=1.0.0">
                 Option-Only Portfolio Optimization with Greek-Induced Covariance and Conditional Risk Premia
               </a>
             </h3>
             <p>
-              Working paper on allocating only across listed calls and puts by
-              treating options as premium-funded, expiring, state-contingent
-              cashflows rather than ordinary asset return columns.
-            </p>
-            <p>
-              The framework maps each option into NAV-normalized cashflows,
-              Greeks, conditional option-risk-premium forecasts, VIX settlement
-              controls, implementation screens, and validation gates. The
-              evidence supports disciplined pre-production research diagnostics,
-              not a live-trading or broker-executed alpha claim.
+              Built a NAV-normalized options-only Markowitz analogue for listed
+              calls and puts, modeling premiums paid/received, payoff and
+              settlement conventions, short-option proceeds, Greek-induced
+              covariance, and conditional option-risk premia. In OOS tests, the
+              VIX-enhanced Greek-Markowitz sleeve reached 1.37 Sharpe / 3.39
+              Sortino gross and 1.03 / 2.21 after full-spread cost screens,
+              using 536 exact VRO/SOQ VIX settlement rows. Framed as
+              pre-production research diagnostics, not broker-executed alpha.
             </p>
           </div>
 
-          <div class="action-links" aria-label="Option-only Markowitz paper links">
+          <div class="action-links" aria-label="Option-only portfolio optimization paper links">
             <a href="assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf?v=1.0.0">PDF</a>
             <a href="https://github.com/dhruvk1432/Option_Portfolio_Greek_Risk_Premia">Repository</a>
           </div>
