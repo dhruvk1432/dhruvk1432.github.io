@@ -5,6 +5,8 @@ Static personal website for GitHub Pages. The first version includes:
 - Profile copy
 - Research papers section for selected academic papers and research systems
 - Dedicated cross-asset portfolio paper page for the v1.0.1 public release
+- Option-only Markowitz cashflow engineering paper entry with PDF and public
+  source repository links
 - Simple projects section for forecasting, options, rates, and event-study work
 - IAQF result bubbles without embedded charts or image-heavy sections
 - Resume and contact links
@@ -17,6 +19,7 @@ cross_asset_portfolio_cashflow_engineering.html
 styles.css
 assets/
   papers/
+    option_only_markowitz_cashflow_engineering_dhruv_kohli.pdf
     cross_asset_portfolio_cashflow_engineering_dhruv_kohli.pdf
     Cross_Asset_Portfolio_Construction_Cashflow_Engineering.pdf
     cross_asset_portfolio_cashflow_engineering/
@@ -31,6 +34,12 @@ The canonical cross-asset PDF filename is
 The older `Cross_Asset_Portfolio_Construction_Cashflow_Engineering.pdf`
 filename is kept as a compatibility copy and should be refreshed whenever the
 canonical paper asset changes.
+
+The canonical option-only Markowitz PDF filename is
+`assets/papers/option_only_markowitz_cashflow_engineering_dhruv_kohli.pdf`.
+
+Source repository:
+`https://github.com/dhruvk1432/Option_Only_Markowitz_Cashflow_Engineering`
 
 ## Cross-Asset Paper Release
 
