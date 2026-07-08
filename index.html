@@ -80,26 +80,48 @@
 
         <article class="paper-card">
           <div class="item-main">
-            <p class="kicker">Option Portfolio Optimization · Greek Covariance · Pre-production Research</p>
+            <p class="kicker">Option-Only Markowitz &middot; Greek-Induced Covariance &middot; Theory to Execution</p>
             <h3>
-              <a href="assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf?v=1.0.0">
+              <a href="assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf?v=2026-07-08">
                 Option-Only Portfolio Optimization with Greek-Induced Covariance and Conditional Risk Premia
               </a>
             </h3>
             <p>
-              Built a NAV-normalized options-only Markowitz analogue for listed
-              calls and puts, modeling premiums paid/received, payoff and
-              settlement conventions, short-option proceeds, Greek-induced
-              covariance, and conditional option-risk premia. In OOS tests, the
-              VIX-enhanced Greek-Markowitz sleeve reached 1.37 Sharpe / 3.39
-              Sortino gross and 1.03 / 2.21 after full-spread cost screens,
-              using 536 exact VRO/SOQ VIX settlement rows. Framed as
-              pre-production research diagnostics, not broker-executed alpha.
+              Developed a portfolio theory for books built entirely from listed
+              options, where classical Markowitz breaks down: premium weights
+              replace the unit budget, covariance is induced through a
+              Greek/state factor map plus regularized residual risk, expected
+              returns come from structural risk-premium channels instead of
+              noisy historical contract means, and the allocation is a conic
+              maximum-Sharpe program whose feasible set carries gross and short
+              premium, stress-loss, margin, and pre-trade liquidity budgets
+              inside the optimizer rather than as after-the-fact accounting.
+            </p>
+            <p>
+              Then took the theory to exchange-realistic practice: contract-level
+              spread/fee/slippage/margin/assignment costs built from historical
+              market-hours CBBO quotes, volume-aware participation caps, exact
+              VRO/SOQ VIX settlement, and whole-contract execution. The headline
+              book &mdash; a locked 56-name equity-option universe plus VIX
+              options &mdash; earns a full-cost net Sharpe of 1.63 (2.01 gross)
+              with net Sortino 4.38, beats both a stock-Markowitz baseline on
+              the same underlyings and a capped naive option book (+1.34 Sharpe
+              versus naive, p &lt; 0.001), and holds up out of sample: rolling
+              36-month refits at 1.27 net Sharpe, positive purged combinatorial
+              cross-validation in both test designs, Monte Carlo resampled and
+              refit fifth percentiles above 1.0, and a deflated Sharpe ratio of
+              0.996 after charging for every candidate examined. The smaller
+              eight-name VIX book confirms the mechanism at 1.38 net. Capacity
+              is a first-class result &mdash; displayed option depth supports
+              the book at $1M NAV and refuses it at $5M &mdash; and every
+              reported number is re-audited by a 386-check independent
+              verification harness on each build. Historical research
+              simulation, not a live track record.
             </p>
           </div>
 
           <div class="action-links" aria-label="Option-only portfolio optimization paper links">
-            <a href="assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf?v=1.0.0">PDF</a>
+            <a href="assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf?v=2026-07-08">PDF</a>
             <a href="https://github.com/dhruvk1432/Option_Portfolio_Greek_Risk_Premia">Repository</a>
           </div>
         </article>
@@ -314,7 +336,7 @@
       </section>
 
       <footer class="site-footer">
-        <p>Last updated June 2026.</p>
+        <p>Last updated July 2026.</p>
       </footer>
     </main>
   </body>
