@@ -41,19 +41,19 @@ The canonical option-only portfolio optimization PDF filename is
 Source repository:
 `https://github.com/dhruvk1432/Option_Portfolio_Greek_Risk_Premia`
 
-Website summary: the paper develops a portfolio theory for books built entirely
-from listed options (premium weights, Greek-induced covariance plus regularized
-residual risk, structural risk-premium means, conic max-Sharpe allocation with
-stress/margin/liquidity budgets inside the optimizer) and validates it under a
+Website summary: the paper adapts Markowitz to books built entirely from
+listed options (premium weights, Greek-factor covariance with retained cross
+terms, structural risk-premium means, cost-aware net utility with hard CVaR,
+stress, margin, collateral, and liquidity gates) and validates it under a
 contract-level cost stack, volume-aware caps, exact VRO/SOQ VIX settlement, and
-whole-contract execution. The headline book (56 equity-option names plus
-VIX) earns a full-cost net Sharpe of 1.63 (2.01 gross) with net Sortino 4.38,
-beats both a stock-Markowitz baseline and a capped naive option book (+1.34
-Sharpe vs naive, p < 0.001), and holds up out of sample (rolling 36-month
-refits 1.27 net Sharpe, positive purged CPCV in both designs, MC resampled and
-refit p05 above 1.0, DSR 0.996); the eight-name VIX book confirms at 1.38 net.
-Capacity holds at $1M NAV and fails at $5M, and a 386-check verifier re-audits
-every reported number.
+whole-contract execution. The headline model, the High Ceiling Allocator on
+eight equity-option names plus VIX, runs a 93-month walk-forward (2018-2026)
+and earns 16.0% annualized net with a 1.18 Sharpe, 2.28 Sortino, and 17.1%
+maximum drawdown. A licensed-quote execution audit replays the frozen trades
+against 82 million OPRA quotes and the book holds a 2.05 Sortino at observed
+touch fills. Validation includes purged CPCV, Monte Carlo resampling and
+refits, and a 435-check verifier, with a 36-month prospective freeze from
+July 2026. Capacity holds at $1M NAV and fails at $5M.
 The site should continue to frame these as historical research simulation
 results, not broker-executed alpha claims.
 

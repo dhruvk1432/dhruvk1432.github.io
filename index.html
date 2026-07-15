@@ -87,38 +87,35 @@
               </a>
             </h3>
             <p>
-              Developed a portfolio theory for books built entirely from listed
-              options, where classical Markowitz breaks down: premium weights
-              replace the unit budget, covariance is induced through a
-              Greek/state factor map plus regularized residual risk, expected
-              returns come from structural risk-premium channels instead of
-              noisy historical contract means, and the allocation is a conic
-              maximum-Sharpe program whose feasible set carries gross and short
-              premium, stress-loss, margin, and pre-trade liquidity budgets
-              inside the optimizer rather than as after-the-fact accounting.
+              Adapted Markowitz portfolio theory to books built entirely from
+              listed options, where every position is a funded, expiring
+              cashflow: premium weights replace the unit budget, covariance is
+              induced through a Greek factor map that keeps the factor and
+              residual cross terms, expected returns come from structural
+              risk-premium channels instead of noisy contract means, and the
+              allocator maximizes cost-aware net utility under hard CVaR,
+              stress, margin, collateral, and point-in-time liquidity gates,
+              with cash admissible and zero wealth treated as absorbing.
             </p>
             <p>
-              Then took the theory to exchange-realistic practice: contract-level
-              spread/fee/slippage/margin/assignment costs built from historical
-              market-hours CBBO quotes, volume-aware participation caps, exact
-              VRO/SOQ VIX settlement, and whole-contract execution. The headline
-              book &mdash; a locked 56-name equity-option universe plus VIX
-              options &mdash; earns a full-cost net Sharpe of 1.63 (2.01 gross)
-              with net Sortino 4.38, beats both a stock-Markowitz baseline on
-              the same underlyings and a capped naive option book (+1.34 Sharpe
-              versus naive, p &lt; 0.001), and holds up out of sample: rolling
-              36-month refits at 1.27 net Sharpe, positive purged combinatorial
-              cross-validation in both test designs, Monte Carlo resampled and
-              refit fifth percentiles above 1.0, and a deflated Sharpe ratio of
-              0.996 after charging for every candidate examined. The smaller
-              eight-name VIX book confirms the mechanism at 1.38 net. Displayed option depth supports
-              the book at $1M NAV and refuses it at $5M, making it a viabl small size book strategy.
+              The headline model runs a 93-month walk-forward on eight
+              mega-cap equity option names plus VIX options from 2018 to
+              2026. Net of the full cost stack it earns 16.0 percent
+              annualized with a 1.18 Sharpe, a 2.28 Sortino, and a 17.1
+              percent maximum drawdown. A licensed-quote execution audit
+              replays every frozen trade against 82 million OPRA quotes and
+              the book holds a 2.05 Sortino paying the full displayed touch
+              spread. Validated with purged combinatorial cross-validation,
+              Monte Carlo resampling and refits, and a 435-check verification
+              suite, then frozen for 36 months of prospective confirmation.
+              Displayed option depth supports the book at $1M NAV and rejects
+              mechanical scaling to $5M.
             </p>
           </div>
 
           <div class="action-links" aria-label="Option-only portfolio optimization paper links">
             <a href="option_only_portfolio_optimization.html">Project Page</a>
-            <a href="assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf?v=2026-07-08">PDF</a>
+            <a href="assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf?v=2026-07-15">PDF</a>
             <a href="https://github.com/dhruvk1432/Option_Portfolio_Greek_Risk_Premia">Repository</a>
           </div>
         </article>

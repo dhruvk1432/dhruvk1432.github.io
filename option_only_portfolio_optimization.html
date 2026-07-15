@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Option-only portfolio optimization paper by Dhruv Kohli: Greek-induced covariance, structural option risk premia, full-cost validation, and capacity limits."
+      content="Option-only portfolio optimization paper by Dhruv Kohli: Greek-factor covariance, cost-aware allocation with survival gates, and an 82M-quote execution audit."
     >
     <title>Option-Only Portfolio Optimization | Dhruv Kohli</title>
     <link rel="stylesheet" href="styles.css">
@@ -20,7 +20,7 @@
         <nav class="links" aria-label="Paper links">
           <a href="index.html">Home</a>
           <span aria-hidden="true">.</span>
-          <a href="assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf?v=2026-07-08">PDF</a>
+          <a href="assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf?v=2026-07-15">PDF</a>
           <span aria-hidden="true">.</span>
           <a href="https://github.com/dhruvk1432/Option_Portfolio_Greek_Risk_Premia">Code</a>
         </nav>
@@ -29,56 +29,55 @@
       <section id="abstract" class="section paper-detail">
         <p class="paper-byline">Dhruv Kohli &middot; July 2026</p>
         <p>
-          Developed a portfolio theory for books built entirely from listed
-          options, where classical Markowitz breaks down: premium weights
-          replace the unit budget, covariance is induced through a
-          Greek/state factor map plus regularized residual risk, expected
-          returns come from structural risk-premium channels instead of
-          noisy historical contract means, and the allocation is a conic
-          maximum-Sharpe program whose feasible set carries gross and short
-          premium, stress-loss, margin, and pre-trade liquidity budgets
-          inside the optimizer rather than as after-the-fact accounting.
+          Adapted Markowitz portfolio theory to books built entirely from
+          listed options, where every position is a funded, expiring
+          cashflow. Premium weights replace the unit budget, covariance is
+          induced through a Greek factor map that keeps the factor and
+          residual cross terms, expected returns come from structural
+          risk-premium channels instead of noisy contract means, and the
+          allocator maximizes cost-aware net utility under hard CVaR,
+          stress, margin, collateral, and point-in-time liquidity gates.
+          Cash is an admissible book, infeasible whole-contract conversions
+          abstain, and zero wealth is an absorbing state that no later
+          return can undo.
         </p>
         <p>
-          Then took the theory to exchange-realistic practice: contract-level
-          spread/fee/slippage/margin/assignment costs built from historical
-          market-hours CBBO quotes, volume-aware participation caps, exact
-          VRO/SOQ VIX settlement, and whole-contract execution. The headline
-          book &mdash; a locked 56-name equity-option universe plus VIX
-          options &mdash; earns a full-cost net Sharpe of 1.63 (2.01 gross)
-          with net Sortino 4.38, beats both a stock-Markowitz baseline on
-          the same underlyings and a capped naive option book (+1.34 Sharpe
-          versus naive, p &lt; 0.001), and holds up out of sample: rolling
-          36-month refits at 1.27 net Sharpe, positive purged combinatorial
-          cross-validation in both test designs, Monte Carlo resampled and
-          refit fifth percentiles above 1.0, and a deflated Sharpe ratio of
-          0.996 after charging for every candidate examined. The smaller
-          eight-name VIX book confirms the mechanism at 1.38 net. Displayed
-          option depth supports the book at $1M NAV and refuses it at $5M,
-          making it a viable small-size book strategy.
+          The headline model, the High Ceiling Allocator, runs a 93-month
+          walk-forward on eight mega-cap equity option names plus VIX
+          options from 2018 to 2026. Net of spreads, fees, slippage,
+          borrow, and margin funding it earns 16.0 percent annualized with
+          a 1.18 Sharpe ratio, a 2.28 Sortino ratio, and a 17.1 percent
+          maximum drawdown. A licensed-quote execution audit then replays
+          every frozen trade against 82 million OPRA quotes and reprices
+          fills at observed spreads: the book holds a 2.05 Sortino paying
+          the full displayed touch and 2.03 under worst-case entry spreads,
+          with 94.1 percent of entry weight covered by real quotes.
+          Validation includes purged combinatorial cross-validation, Monte
+          Carlo resampling and refits, a 435-check verification suite, and
+          a 36-month prospective freeze that starts July 2026.
         </p>
 
         <dl class="result-bubbles paper-results" aria-label="Headline option-only results">
           <div>
-            <dt>1.63</dt>
-            <dd>Full-cost net Sharpe for the locked 56-name plus VIX option book; 2.01 gross.</dd>
+            <dt>2.28</dt>
+            <dd>Net Sortino for the High Ceiling Allocator on the eight-name plus VIX book, with a 1.18 net Sharpe.</dd>
           </div>
           <div>
-            <dt>4.38</dt>
-            <dd>Net Sortino for the headline book, with a +1.34 Sharpe edge over capped naive options.</dd>
+            <dt>2.05</dt>
+            <dd>Sortino at observed touch fills in the 82M-quote execution audit. The result survives paying the full displayed spread.</dd>
           </div>
           <div>
-            <dt>1.27</dt>
-            <dd>Rolling 36-month refit net Sharpe for the larger+VIX specification.</dd>
+            <dt>16.0%</dt>
+            <dd>Annualized net return over the 93-month walk-forward, with a 17.1 percent maximum drawdown.</dd>
           </div>
           <div>
             <dt>$1M</dt>
-            <dd>Displayed option depth supports the book at small-account scale and rejects $5M scaling.</dd>
+            <dd>Displayed option depth supports the book at small-account scale and rejects mechanical $5M scaling.</dd>
           </div>
         </dl>
 
         <div class="paper-actions" aria-label="Download and code links">
-          <a class="button primary" href="assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf?v=2026-07-08">Download PDF</a>
+          <a class="button primary" href="assets/papers/option_only_portfolio_optimization_dhruv_kohli.pdf?v=2026-07-15">Download PDF</a>
           <a class="button" href="https://github.com/dhruvk1432/Option_Portfolio_Greek_Risk_Premia">Code Repository</a>
         </div>
       </section>
@@ -88,75 +87,81 @@
           <h2>Empirical Verdict</h2>
         </div>
         <p>
-          The paper tests four universes at a one-million-dollar account size:
-          eight equity-option names, the same names plus VIX options, 56 names,
-          and 56 names plus VIX options. The two VIX-enabled books pass the
-          full-cost tests. The broad no-VIX book is mixed, and the original
-          no-VIX book remains a capacity diagnostic rather than a deployable
-          result.
+          The paper tells the research path honestly through three models.
+          The Sharpe Prototype found an attractive later window but fails a
+          survival standard: its VIX-enabled cross-validation paths absorb
+          at zero in March 2020, and it was selected after inspecting the
+          window that flatters it. The Survival Allocator repairs the
+          covariance, prices costs inside the objective, and makes the hard
+          gates binding. The High Ceiling Allocator keeps those repairs,
+          raises the risk ceiling to 25 percent, and is the one development
+          path that remains credible after the licensed-quote audit.
         </p>
         <p>
-          The mechanism is narrow by design. Breadth only helps after replacing
-          noisy contract-level historical means with structural forecasts, and
-          option carry must be disciplined by stress, vega, margin, liquidity,
-          and whole-contract constraints before the Sharpe ratios are treated as
-          economic results.
+          The eight-name plus VIX book is the headline because its equity
+          spread evidence is exact historical market-hours CBBO. The
+          broader 56-name book leans on an inferred spread proxy, and the
+          audit found real broad-name spreads wider than the proxy assumed:
+          its touch-fill Sortino drops 17.5 percent against 9.8 percent for
+          the headline book. Every reported path is retrospective
+          development evidence, and confirmation requires 36 untouched
+          monthly observations under frozen code, data rules, and hashes.
         </p>
         <p class="disclaimer">
           Research paper only. The results are historical backtests, not
-          investment advice, live trading performance, or evidence that the book
-          can scale beyond the displayed-depth capacity checks.
+          investment advice, live trading performance, or evidence that the
+          book can scale beyond the displayed-depth capacity checks.
         </p>
       </section>
 
       <section class="section">
         <div class="section-heading">
           <h2>Selected Figures</h2>
-          <p>Main diagnostics from the July 2026 option-only paper build.</p>
+          <p>Main exhibits from the July 2026 option-only paper build.</p>
         </div>
 
         <div class="figure-grid">
           <figure>
             <img
-              src="assets/papers/option_only_portfolio_optimization/research_pipeline.png?v=2026-07-08"
-              alt="Research pipeline from listed option contracts through cashflow mapping, risk modeling, robust allocation, and validation."
+              src="assets/papers/option_only_portfolio_optimization/research_pipeline.png?v=2026-07-15"
+              alt="Research pipeline from listed option contracts through cashflow mapping, joint risk modeling, survival-gated allocation, and validation."
             >
-            <figcaption>Research pipeline linking listed contracts to NAV cashflows, Greek-induced covariance, robust allocation, and validation.</figcaption>
+            <figcaption>Research pipeline linking listed contracts to NAV cashflows, Greek-induced covariance, survival-gated allocation, and validation.</figcaption>
           </figure>
           <figure>
             <img
-              src="assets/papers/option_only_portfolio_optimization/final_baseline_comparison.png?v=2026-07-08"
-              alt="Final baseline comparison showing full-cost net Sharpe for four option-only variants and stock or naive baselines."
+              src="assets/papers/option_only_portfolio_optimization/headline_wealth.png?v=2026-07-15"
+              alt="Headline cumulative net wealth and drawdown for the High Ceiling Allocator with cash abstention months shaded."
             >
-            <figcaption>Final four-variant comparison at $1M NAV. The VIX-enabled locked E1 books beat both baselines.</figcaption>
+            <figcaption>Headline development path. Net wealth compounds to 3.16 with cash abstentions shaded and a 17.1 percent maximum drawdown.</figcaption>
           </figure>
           <figure>
             <img
-              src="assets/papers/option_only_portfolio_optimization/distributional_validation.png?v=2026-07-08"
-              alt="Distributional validation densities for CPCV paths, claim-window CPCV, Monte Carlo resampled histories, and Monte Carlo refit stability."
+              src="assets/papers/option_only_portfolio_optimization/audit_scenario_ladder.png?v=2026-07-15"
+              alt="Execution audit ladder showing Sortino and annualized return under modeled, mid, touch, and worst fill scenarios."
             >
-            <figcaption>Distributional validation across CPCV, claim-window, Monte Carlo resampling, and refit-stability tests.</figcaption>
+            <figcaption>Execution audit ladder. Sortino moves from 2.28 modeled to 2.05 at observed touch fills and 2.03 under worst-case spreads.</figcaption>
           </figure>
           <figure>
             <img
-              src="assets/papers/option_only_portfolio_optimization/robustness_summary.png?v=2026-07-08"
+              src="assets/papers/option_only_portfolio_optimization/proxy_coverage_evidence.png?v=2026-07-15"
+              alt="Proxy reliance, quote coverage, and modeled versus observed spread quantiles by regime."
+            >
+            <figcaption>Why the eight-name book is the headline. Proxy reliance, quote coverage, and modeled versus observed spreads in one view.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/papers/option_only_portfolio_optimization/robustness_summary.png?v=2026-07-15"
               alt="Robustness heatmap showing pass, mixed, fail, and diagnostic outcomes by option universe and robustness test."
             >
-            <figcaption>Robustness heatmap showing where each universe passes, mixes, fails, or remains diagnostic.</figcaption>
+            <figcaption>Robustness heatmap across CPCV, Monte Carlo, rolling out-of-sample, and overfitting tests for the four universes.</figcaption>
           </figure>
           <figure>
             <img
-              src="assets/papers/option_only_portfolio_optimization/rolling_oos_paths.png?v=2026-07-08"
-              alt="Rolling out-of-sample full-cost cumulative wealth paths for locked E1 option variants and capped naive baselines."
-            >
-            <figcaption>Rolling OOS wealth paths. The VIX-enabled E1 variants compound strongly and beat the stock baseline in the walk-forward ledger.</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/papers/option_only_portfolio_optimization/capacity_spread_coverage.png?v=2026-07-08"
+              src="assets/papers/option_only_portfolio_optimization/capacity_spread_coverage.png?v=2026-07-15"
               alt="Capacity and spread-source coverage charts showing liquidity caps, deployed gross premium, and historical versus inferred CBBO rows."
             >
-            <figcaption>Capacity and spread-source coverage. Displayed depth binds the result, and the chart separates exact historical CBBO rows from inferred CBBO proxies.</figcaption>
+            <figcaption>Capacity and spread-source coverage. Displayed depth binds the result and separates exact CBBO rows from inferred proxies.</figcaption>
           </figure>
         </div>
       </section>
