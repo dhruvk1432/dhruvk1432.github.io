@@ -232,6 +232,41 @@
           </li>
           <li>
             <div>
+              <h3>ERCOT Power-Market Forecasting Platform</h3>
+              <p>
+                A point-in-time, leakage-free forecasting platform for ERCOT
+                power markets that corrects the grid operator's own published
+                day-ahead forecasts for wind, temperature, and load. Hub-pooled
+                quantile gradient-boosting models learn the systematic error of
+                the public forecast under a strict D-1 09:30 decision-time
+                contract, so no realized weather, actuals, or post-decision
+                revisions ever enter a feature. Skill is verified out-of-sample
+                on both monthly and quarterly walk-forward folds, with
+                seasonal-breadth and coverage gates, deterministic hash-matched
+                reruns, and a sealed holdout that was never touched.
+              </p>
+              <dl class="project-metrics" aria-label="ERCOT forecasting headline results">
+                <div>
+                  <dt>23%</dt>
+                  <dd>Lower MAE vs ERCOT temperature forecast</dd>
+                </div>
+                <div>
+                  <dt>14%</dt>
+                  <dd>Lower MAE vs ERCOT wind forecast</dd>
+                </div>
+                <div>
+                  <dt>2.5%</dt>
+                  <dd>Lower MAE vs ERCOT load forecast</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="project-actions" aria-label="ERCOT Power-Market Forecasting Platform links">
+              <a href="assets/papers/ERCOT_Power_Forecasting_Results.pdf">Results</a>
+              <a href="https://github.com/dhruvk1432/Power_and_Weather">Repository</a>
+            </div>
+          </li>
+          <li>
+            <div>
               <h3>ProphetHacks Forecast Agent</h3>
               <p>
                 Brier-optimized probability forecaster for Prophet Arena and
